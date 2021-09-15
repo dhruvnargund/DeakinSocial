@@ -24,6 +24,7 @@ font-weight: 700;
 .signUpButton{
     background-color: #FF4B2B;
     border: none;
+    color: white;
 }
 
 .welcome{
@@ -31,10 +32,8 @@ font-weight: 700;
 }
 
 .signupBox a{
-
-    text-decoration: none;
+    text-decoration: underline;
     color: white;
     font-weight: 500;
 }
- 
  
