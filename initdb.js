@@ -23,3 +23,5 @@ async function listDatabases(client) {
     console.log('Databases:');
     databasesList.databases.forEach(db => console.log(` - ${db.name}`));
 }
+
+exports.mongoClient = client;

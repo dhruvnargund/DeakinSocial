@@ -6,24 +6,26 @@ I'm adding this to make sure we are all on the same page heading into full-time 
 
 We'll be using the following as our file structure:
 --controllers/
---models/
 --public/
 --routes/
---views/
+--services/
+--initdb.js
 --server.js
 
 ### controllers/
-Will contain our logic controllers.
-
-### models/
-This will contain our db schemas, etc. 
-MongoDB: https://www.mongodb.com/try/download/community
-Required. Install complete version. Add MongoDB Compass if you want, it's a GUI for performing CRUD operations on your databases, but it isn't required.
+Will contain our logic controllers, called upon by our route handling.
 
 ### public/
-Contains our templates, HTML files, assets. Are we intending to use any templating like Pug?
+Will contain html and other assets.
 
 ### routes/
-This will contain our routing files
+Will contain route request handling.
+
+### services/
+Will contain our db CRUD functions, called upon by our controllers.
 
 ### server.js
+Server launch file. Initializes the db, sets the application to listen, and defines our initial routes.
+
+### initdb.js
+Contains our db connection logic and exports as a client for use in the services.
