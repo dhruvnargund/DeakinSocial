@@ -1,7 +1,8 @@
 let client = require("../initdb");
+const path = require("path");
 
 const getSignIn = (res) => {
-    res.send("You have reached the Sign In page.");
+    res.sendFile(path.join(__dirname, '../public', 'signIn.html'));
 }
 
 module.exports = {

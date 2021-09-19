@@ -1,7 +1,8 @@
 let client = require("../initdb");
+const path = require("path");
 
 const getResetPass = (res) => {
-    res.send("You have reached the Reset Password page.");
+    res.sendFile(path.join(__dirname, '../public', 'resetPassword.html'));
 }
 
 module.exports = {

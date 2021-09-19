@@ -1,7 +1,8 @@
 let client = require("../initdb");
+const path = require("path");
 
 const getForgotPass = (res) => {
-    res.send("You have reached the Forgot Password page.");
+    res.sendFile(path.join(__dirname, '../public', 'forgotPassword.html'));
 }
 
 module.exports = {

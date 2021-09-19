@@ -18,7 +18,7 @@ app.use('/', users);
 app.use('/timeline', timeline);
 app.use('/profile', profile);
 
-// YK Sprint1 routes : [START]
+// YK Sprint1: routes [START]
 let signIn = require('./routes/signIn');
 let signUp = require('./routes/signUp');
 let forgotPass = require('./routes/forgotPass');
@@ -28,8 +28,7 @@ app.use('/signIn', signIn);
 app.use('/signUp', signUp);
 app.use('/forgotPass', forgotPass);
 app.use('/resetPass', resetPass);
-// YK Sprint1 routes : [END]
-
+// YK Sprint1: routes [END]
 
 app.listen(port, () => {
     console.log("Server is listening on port", port);
