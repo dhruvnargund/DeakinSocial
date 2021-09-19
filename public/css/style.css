@@ -9,7 +9,7 @@ body{
 
 .signupBox{
     /* border: 2px solid black; */
-    height: 600px;
+    height: 650px;
 }
 
 .signupBox:nth-last-of-type(1){
