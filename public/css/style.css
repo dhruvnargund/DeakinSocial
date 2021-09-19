@@ -50,17 +50,17 @@ font-weight: 700;
 
 
 /* Loading animation for timeline and homepage*/
-.loader{
+/* .loader{
     height: 50px;
     opacity: 0;
     /* animation: rotate 3s linear infinite; */
-}
+/* } */
 
-.loader.show {
+/* .loader.show {
     opacity: 1 !important;
-}
+} */
 
-.circle{
+/* .circle{
     display: inline-block;
     background-color: #FF416C;
     width: 40px;
@@ -69,12 +69,12 @@ font-weight: 700;
     transform: scale(0);
     margin: -10px;
     animation: grow 1.5s linear infinite;
-}
+} */
 
-.circle:nth-last-of-type(2){
+/* .circle:nth-last-of-type(2){
     background-color: aliceblue;
     animation-delay: 0.75s;
-}
+} */
 
 /* @keyframes rotate{
     to{
@@ -82,12 +82,13 @@ font-weight: 700;
     }
 } */
 
-@keyframes grow{
+/* @keyframes grow{
     50%{
         transform: scale(1);
     }
-}
+} */
 
-.post{
+/* .post{
     margin-bottom: 20px;
-}
+} */
+
