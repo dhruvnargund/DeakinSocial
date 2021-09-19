@@ -2,12 +2,13 @@
 const express = require('express');
 const app = express();
 let initDB = require('./initdb');
-
+let path = require("path");
 /* Use env-defined port or default to 3000 */
 let port = process.env.PORT || 3000;
 
 /* Middleware JSON handling function for POST/PUT requests */
 app.use(express.json());
+app.use(express.static(path.join(__dirname, './public')));
 
 /* Route Handling */
 const users = require('./routes/users');
