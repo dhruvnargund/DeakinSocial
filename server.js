@@ -13,10 +13,12 @@ app.use(express.json());
 const users = require('./routes/users');
 const timeline = require('./routes/timeline');
 const profile = require('./routes/profile');
+const post = require('./routes/post');
 
 app.use('/', users);
 app.use('/timeline', timeline);
 app.use('/profile', profile);
+app.use('/post', post);
 
 app.listen(port, () => {
     console.log("Server is listening on port", port);

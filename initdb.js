@@ -2,7 +2,7 @@ require('dotenv').config();
 
 const { MongoClient } = require('mongodb');
 
-const uri = process.env.DB_URL;
+const uri = process.env.DB_URL_2;
 const client = new MongoClient(uri);
 
 async function main() {
@@ -23,3 +23,5 @@ async function listDatabases(client) {
     console.log('Databases:');
     databasesList.databases.forEach(db => console.log(` - ${db.name}`));
 }
+
+exports.mongoClient = client;
