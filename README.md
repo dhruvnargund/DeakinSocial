@@ -29,3 +29,5 @@ Server launch file. Initializes the db, sets the application to listen, and defi
 
 ### initdb.js
 Contains our db connection logic and exports as a client for use in the services.
+
+added db schema.
