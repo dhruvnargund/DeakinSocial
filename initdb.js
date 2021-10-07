@@ -3,7 +3,7 @@ require('dotenv').config();
 const { MongoClient } = require('mongodb');
 
 const uri = process.env.DB_URL;
-const client = new MongoClient(uri);
+const client = new MongoClient("mongodb+srv://harsha:reddy@cluster0.22slh.mongodb.net/DeakinSocial");
 
 async function main() {
     try {
