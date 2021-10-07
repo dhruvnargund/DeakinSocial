@@ -1,8 +1,10 @@
 const Service = require('../services');
 
 const getProfile = (req, res) => {
-    console.log('Hit the Timeline Controller');
-    Service.ProfileService.getProfile(req, res);
+    console.log('in profileController');
+    Service.ProfileService.getProfile(res);
 }
 
-module.exports = { getProfile }
+module.exports = { 
+    getProfile 
+}
