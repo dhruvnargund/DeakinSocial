@@ -9,13 +9,12 @@ body{
 
 .signupBox{
     /* border: 2px solid black; */
-    height: 650px;
+    height: 600px;
 }
 
 .signupBox:nth-last-of-type(1){
     background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-	background: linear-gradient(to right, #FF4B2B, #FF416C);    
-    color: white;
+	background: linear-gradient(to right, #FF4B2B, #FF416C);    color: white;
 }
 
 h1{
@@ -48,47 +47,22 @@ font-weight: 700;
     max-width: 700px;
 }
 
+#mainNavbar{
+    font-size: 1.5rem;
+    font-weight: 200;
+    text-transform: uppercase;
+}
 
-/* Loading animation for timeline and homepage*/
-/* .loader{
-    height: 50px;
-    opacity: 0;
-    /* animation: rotate 3s linear infinite; */
-/* } */
+#mainNavbar .navbar-brand{
+    color:#ea1c2c;
+    font-size: 2rem;
+    font-weight: 200;
+}
 
-/* .loader.show {
-    opacity: 1 !important;
-} */
+#mainNavbar .nav-link{
+    color: white;
+}
 
-/* .circle{
-    display: inline-block;
-    background-color: #FF416C;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    transform: scale(0);
-    margin: -10px;
-    animation: grow 1.5s linear infinite;
-} */
-
-/* .circle:nth-last-of-type(2){
-    background-color: aliceblue;
-    animation-delay: 0.75s;
-} */
-
-/* @keyframes rotate{
-    to{
-        transform: rotate(360deg);
-    }
-} */
-
-/* @keyframes grow{
-    50%{
-        transform: scale(1);
-    }
-} */
-
-/* .post{
-    margin-bottom: 20px;
-} */
-
+#mainNavbar .nav-link:hover{
+    color: #ea1c2c;
+}
