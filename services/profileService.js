@@ -13,7 +13,7 @@ const getAllProfiles = (req, res) => {
 
 const getProfile = (req, res) => {
     console.log('Hit the specific profile service');
-    User.findOne({username: req.params.id}).then((result) => res.send(result)).catch((err) => console.log("Error:, err"));
+    User.findOne({username: req.params.id}).then((result) => res.send(result)).catch((err) => console.log("Error:", err));
 }
 
 module.exports = { getAllProfiles, getProfile }
