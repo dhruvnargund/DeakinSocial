@@ -12,6 +12,10 @@ app.use(express.json());
 /* Deliver static public facing */
 app.use(express.static(path.join(__dirname, './public')));
 
+/* Add pug functionality */
+app.set('views', path.join(__dirname, './views'));
+app.set('view engine', 'pug');
+
 /* Route Handling */
 const users = require('./routes/users');
 const timeline = require('./routes/timeline');
