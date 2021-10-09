@@ -4,7 +4,8 @@ const router = express.Router();
 const ProfileController = require('../controllers/profileController');
 
 router.get('/', (req, res) => {
-    res.send('You arrived at the profile.');
+    console.log('Hit the Profile Router');
+    ProfileController.getAllProfiles(req, res);
 })
 
 router.get('/:id', (req, res) => {
