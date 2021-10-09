@@ -1,7 +1,7 @@
 let client = require("../initdb");
 const path = require("path");
 
-const User = require("../models/User");
+const User = require("../models/user");
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
@@ -10,20 +10,22 @@ const getSignUp = (res) => {
 }
 
 const postSignUp = (req, res, next) => {
-    bcrypt.hash (password, 10, function(err, hashedPass) {
+    /* bcrypt.hash (password, 10, function(err, hashedPass) {
         if(err) {
             res.json({
                 error: err.message
             })
         }
-    })
+    }) */
 
     let user = new User({
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
         username: req.body.username,
-        fullName: req.body.fullName,
+        password: req.body.password,
         email: req.body.email,
         campus: req.body.campus,
-        password: req.body.password,
+        bio: req.body.bio,
     })
     
     user.save()
