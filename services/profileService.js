@@ -1,9 +1,19 @@
-let client = require('../initdb');
+const User = require('../models/user');
 
-const getProfile = (req, res) => {
-    // Insert db request here. Test hit and params below for now
+const getAllProfiles = (req, res) => {
     console.log('Hit the Profile Service');
-    res.send('Welcome to ' + req.params.id + '\'s profile');
+    // Insert db request here.
+    User.find().then((result) => res.send(result)).catch((err) => console.log("Error:", err));
+    
+    // res.render('profile', {
+    //     // pass request results to pug page
+    //     owner: req.params.id
+    // });
 }
 
-module.exports = { getProfile }
+const getProfile = (req, res) => {
+    console.log('Hit the specific profile service');
+    User.findOne({username: req.params.id}).then((result) => res.send(result)).catch((err) => console.log("Error:, err"));
+}
+
+module.exports = { getAllProfiles, getProfile }
