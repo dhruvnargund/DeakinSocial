@@ -5,7 +5,7 @@ const ProfileController = require('../controllers/profileController');
 
 router.get('/', (req, res) => {
     console.log('Hit the Profile Router');
-    ProfileController.getProfile(req, res);
+    ProfileController.getAllProfiles(req, res);
 })
 
 router.get('/:id', (req, res) => {
