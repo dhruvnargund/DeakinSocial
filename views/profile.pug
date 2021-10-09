@@ -4,6 +4,12 @@ html
         title The Profile Page
     body
         h1 This is the profile page of #{owner}.
-    listOfPosts.forEach({
-        
-    })
+        div
+            each r in result
+                div 
+                    p - #{r.username}
+                    p #{r.content}
+                    if r.comments != 0
+                        each comment in r.comments
+                            p ------ #{comment.username}
+                            p ------ #{comment.comment}

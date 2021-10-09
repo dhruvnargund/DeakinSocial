@@ -43,7 +43,14 @@ const UserSchema = new Schema({
     bio: {
         type: String,
         required: false
-    }
+    },
+    friends: [{
+        friendsUsername: {
+            type: String,
+            lowercase: true,
+            match: [/^[a-zA-Z0-9]+$/, 'is invalid'],
+        }
+    }]
 }, {timeStamps: true});
 
 UserSchema.plugin(uniqueValidator);

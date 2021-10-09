@@ -30,6 +30,7 @@ mongoose.connection.on('open', function(){
 })
 
 /* Model Handling */
+const User = require('./models/user');
 
 /* Create some data */
 // const harshaUser = new User({
@@ -62,17 +63,52 @@ mongoose.connection.on('open', function(){
 //     username: "bathomas",
 //     password: "benpass"
 // })
-// const Post = require('./models/posts');
-// const postOne = new Post({
-//     username: "dnargund",
-//     content: "This is some content that is extra better."
-// });
-// postOne.save();
+// const yashAddedUser = new User({
+//     firstName: "abc",
+//     lastName: "def",
+//     email: "yash@ab.mail",
+//     username: "ypk123",
+//     password: "deakin725",
+//     campus: "burwood",
+//     bio: "from india"
+// })
 
 // harshaUser.save();
 // dhruvUser.save();
 // yashUser.save();
 // benUser.save();
+// yashAddedUser.save();
+
+// const Post = require('./models/posts');
+// const postOne = new Post({
+//     username: "dnargund",
+//     content: "This is some content that is awesome."
+// });
+// const postTwo = new Post({
+//     username: "dnargund",
+//     content: "This is some content that is better than awesome."
+// });
+// const postThree = new Post({
+//     username: "bathomas",
+//     content: "This is real Ben content."
+// });
+// const postFour = new Post({
+//     username: "bathomas",
+//     content: "Amazing Ben Content."
+// });
+// const postFive = new Post({
+//     username: "bathomas",
+//     content: "Amazing Ben Content.",
+//         comments: {
+//             comment: "Yeah, it's amazing!",
+//             username: "dnargund"
+//         }
+// });
+// postOne.save();
+// postTwo.save();
+// postThree.save();
+// postFour.save();
+// postFive.save();
 
 /* Middleware JSON handling function for POST/PUT requests */
 app.use(express.json());
@@ -83,6 +119,7 @@ app.use(express.static(path.join(__dirname, './public')));
 /* Add pug functionality */
 app.set('views', path.join(__dirname, './views'));
 app.set('view engine', 'pug');
+
 /* Route Handling */
 const users = require('./routes/users');
 const timeline = require('./routes/timeline');
@@ -92,6 +129,7 @@ const signIn = require('./routes/signIn');
 const signUp = require('./routes/signUp');
 const forgotPass = require('./routes/forgotPass');
 const resetPass = require('./routes/resetPass');
+const friends = require('./routes/friends');
 
 app.use('/', users);
 app.use('/timeline', timeline);
@@ -101,6 +139,7 @@ app.use('/signIn', signIn);
 app.use('/signUp', signUp);
 app.use('/forgotPass', forgotPass);
 app.use('/resetPass', resetPass);
+app.use('/friends', friends);
 
 app.listen(port, () => {
     console.log("Server is listening on port", port);
