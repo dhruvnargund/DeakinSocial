@@ -62,6 +62,12 @@ mongoose.connection.on('open', function(){
 //     username: "bathomas",
 //     password: "benpass"
 // })
+// const Post = require('./models/posts');
+// const postOne = new Post({
+//     username: "dnargund",
+//     content: "This is some content that is extra better."
+// });
+// postOne.save();
 
 // harshaUser.save();
 // dhruvUser.save();
