@@ -14,17 +14,17 @@ head
   .layout-left
     h1.brand DeakinSocial
     .sidebar-menu
-      .sidebar-menu-item.sidebar-menu-item-active
-        img.sidebar-menu-item-icon.sidebar-menu-item-icon-active(src='./public/SVG Icons/icons8-home.svg')
+      .sidebar-menu-item
+        img.sidebar-menu-item-icon(src='../public/SVG Icons/icons8-home.svg')
         |                     Homepage
       .sidebar-menu-item
-        img.sidebar-menu-item-icon(src='./public/SVG Icons/messages.svg')
+        img.sidebar-menu-item-icon(src='../public/SVG Icons/messages.svg')
         |                     Chats
       .sidebar-menu-item
-        img.sidebar-menu-item-icon(src='./public/SVG Icons/notifications.svg')
+        img.sidebar-menu-item-icon(src='../public/SVG Icons/notifications.svg')
         |                     Notifications
-      .sidebar-menu-item
-        img.sidebar-menu-item-icon(src='./public/SVG Icons/profile.svg')
+      .sidebar-menu-item.sidebar-menu-item-active
+        img.sidebar-menu-item-icon.sidebar-menu-item-icon-active(src='./public/SVG Icons/profile.svg')
         |                     My Profile
   .layout-main
     .all-posts
@@ -36,5 +36,9 @@ head
               .post-fullname 
               .post-time #{r.time}
             .post-content #{r.content}
+            each comment in r.comments 
+              .post-username-comments #{comment.username}
+              .comments #{comment.comment}
+
   .layout-right-container
     .layout-right

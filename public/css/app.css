@@ -81,3 +81,19 @@ margin-right: 5px;
 margin-left: 10px;
 color: #657786;
 }
+
+.post-username-comments{
+    margin-top: 20px;
+
+    border-top:1px solid #e6ecf0;
+    font-size: 15px;
+    font-weight: 700;
+    color: #14171a;
+    margin-right: 5px;
+}
+
+.comments{
+margin-top: 9px;
+padding:0 5px;
+
+}
