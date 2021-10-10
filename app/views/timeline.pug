@@ -16,26 +16,27 @@ head
   .layout-left
     h1.brand DeakinSocial
     .sidebar-menu
-      .sidebar-menu-item.sidebar-menu-item-icon-active
-        img.sidebar-menu-item-icon.sidebar-menu-item-active.sidebar-menu-item-active(src='../public/SVG/icons8-home.svg')
-        |                     Homepage
       .sidebar-menu-item
-        img.sidebar-menu-item-icon(src='../public/SVG/icons8-home.svg')
-        |                     My Friends
+        a(href='http://localhost:3000/timeline') Homepage
       .sidebar-menu-item
-        img.sidebar-menu-item-icon(src='../public/SVG/profile.svg')
-        |                     My Profile
+        a(href='http://localhost:3000/') My Friends
+        
+      .sidebar-menu-item.sidebar-menu-item-active
+        a(href='http://localhost:3000/profile/dnargund') My Profile
+      .sidebar-menu-item
+        a(href='http://localhost:3000/search') Search
   .layout-main
     .all-posts
       each r in result
         .post
           .post-main
             .post-header
-              .post-username #{r.username}
-              .post-fullname 
+              .post-username 
+              a(href=`http://localhost:3000/profile/${r.username}`) #{r.username}
               .post-time #{r.time}
             .post-content #{r.content}
             each comment in r.comments 
-              .post-username-comments #{comment.username}
+              .post-username-comments
+              a(href=`http://localhost:3000/profile/${post.username}`) #{comment.username}
               .comments #{comment.comment}
 
