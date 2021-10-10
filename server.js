@@ -115,6 +115,7 @@ app.use(express.json());
 
 /* Deliver static public facing */
 app.use(express.static(path.join(__dirname, './public')));
+app.use(express.urlencoded({extended: true}));
 
 /* Add pug functionality */
 app.set('views', path.join(__dirname, './views'));
@@ -129,6 +130,7 @@ const signIn = require('./routes/signIn');
 const signUp = require('./routes/signUp');
 const forgotPass = require('./routes/forgotPass');
 const resetPass = require('./routes/resetPass');
+const search = require('./routes/search');
 const friends = require('./routes/friends');
 
 app.use('/', users);
@@ -139,6 +141,7 @@ app.use('/signIn', signIn);
 app.use('/signUp', signUp);
 app.use('/forgotPass', forgotPass);
 app.use('/resetPass', resetPass);
+app.use('/search', search);
 app.use('/friends', friends);
 
 app.listen(port, () => {
