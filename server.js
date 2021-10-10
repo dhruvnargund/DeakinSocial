@@ -15,13 +15,13 @@ mongoose.connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
-.then((res) => console.log('Connection to db established.'))
-.catch((err) => console.log('Error:', err));
+    .then((res) => console.log('Connection to db established.'))
+    .catch((err) => console.log('Error:', err));
 
 /* Get database collection names for confirmation */
-mongoose.connection.on('open', function(){
-    mongoose.connection.db.listCollections().toArray(function(err, names) {
-        if(err) {
+mongoose.connection.on('open', function () {
+    mongoose.connection.db.listCollections().toArray(function (err, names) {
+        if (err) {
             console.log('Error:', err);
         } else {
             names.forEach(e => console.log('-', e.name))
