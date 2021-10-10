@@ -19,8 +19,7 @@ head
       .sidebar-menu-item
         a(href='http://localhost:3000/timeline') Homepage
       .sidebar-menu-item
-        a(href='http://localhost:3000/') My Friends
-        
+        a(href='http://localhost:3000/friends') My Friends        
       .sidebar-menu-item.sidebar-menu-item-active
         a(href='http://localhost:3000/profile/dnargund') My Profile
       .sidebar-menu-item
@@ -31,12 +30,11 @@ head
         .post
           .post-main
             .post-header
-              .post-username 
-              a(href=`http://localhost:3000/profile/${r.username}`) #{r.username}
+              .post-username #{r.username}
+              .post-fullname 
               .post-time #{r.time}
             .post-content #{r.content}
             each comment in r.comments 
-              .post-username-comments
-              a(href=`http://localhost:3000/profile/${post.username}`) #{comment.username}
+              .post-username-comments #{comment.username}
               .comments #{comment.comment}
 

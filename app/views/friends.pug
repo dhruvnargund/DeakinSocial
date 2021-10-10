@@ -14,17 +14,16 @@ head
   //- link(rel='stylesheet' href='../public/css/app.css')
 .layout
   .layout-left
-    h1.brand DeakinSocial
+    h1.brand My Friends
     .sidebar-menu
       .sidebar-menu-item
-        img.sidebar-menu-item-icon(src='../public/SVG Icons/icons8-home.svg')
-        |                     Homepage
+        a(href='http://localhost:3000/timeline') Homepage
+      .sidebar-menu-item.sidebar-menu-item-active
+        a(href='http://localhost:3000/') My Friends
       .sidebar-menu-item
-        img.sidebar-menu-item-icon(src='./public/SVG Icons/profile.svg')
-        |                     My Profile
-      .sidebar-menu-item.sidebar-menu-item-icon-active
-        img.sidebar-menu-item-icon.sidebar-menu-item-active.sidebar-menu-item-active(src='./public/SVG Icons/profile.svg')
-        |                     My Friends
+        a(href='http://localhost:3000/profile/dnargund') My Profile
+      .sidebar-menu-item
+        a(href='http://localhost:3000/search') Search
   .layout-main
     .all-posts
         each friend in result.friends 

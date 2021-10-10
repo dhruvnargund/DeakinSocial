@@ -58,17 +58,5 @@ const UserSchema = new Schema({
 
 UserSchema.plugin(uniqueValidator);
 
-UserSchema.methods.getUserData = function(){
-    return {
-        firstName: this.firstName,
-        lastName: this.lastName,
-        password: this.password,
-        username: this.username,
-        email: this.email,
-        campus: this.campus,
-        bio: this.bio
-    }
-}
-
 const User = mongoose.model('User', UserSchema);
 module.exports = User;
