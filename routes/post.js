@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
-const PostController = require('../controllers/PostController');
+const PostController = require('../controllers/postController');
 
 router.get('/', (req, res) => {
-    res.send('You attempted to post.');
+    console.log('Hit the post Router with no id');
+    PostController.getAllPosts(req, res);
 })
 
 router.get('/:id', (req, res) => {
