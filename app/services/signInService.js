@@ -1,6 +1,7 @@
 const path = require("path");
 const User = require('../models/user');
-const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken');
+const bcrypt = require("bcryptjs/dist/bcrypt");
 
 const getSignIn = (res) => {
     res.sendFile(path.join(__dirname, '../public', 'signIn.html'));
@@ -13,6 +14,15 @@ const postSignIn = (req, res, next) => {
     User.findOne({$and: [{email: userid}, {password: pass}]})
     .then(user => {
         if(user){
+            const email = req.body.email;
+            const token = jwt.sign(
+                { user_id: user.username, email },
+                process.env.TOKEN_KEY,
+                {
+                  expiresIn: "2h",
+                }
+              );
+            user.token = token;
             res.redirect('http://localhost:3000/profile');
             /* bcrypt.compare(pass, user.password, function(err,result) {
                 if(err) {
@@ -32,9 +42,9 @@ const postSignIn = (req, res, next) => {
                     })
                 }
             }) */
-            /* res.json({
+            res.json({
                 message:'Login successful'
-            }) */
+            })
         } else {
             res.json({
                 message: 'User not found!'

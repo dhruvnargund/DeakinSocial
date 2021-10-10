@@ -44,6 +44,9 @@ const UserSchema = new Schema({
         type: String,
         required: false
     },
+    token: [{
+        type:String,
+    }],
     friends: [{
         friendsUsername: {
             type: String,

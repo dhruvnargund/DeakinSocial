@@ -1,3 +1,5 @@
+const bcrypt = require("bcryptjs/dist/bcrypt");
+const jwt = require("jsonwebtoken");
 const path = require("path");
 const User = require('../models/user');
 
@@ -15,6 +17,14 @@ const postSignUp = (req,res) => {
         campus : req.body.campus,
         bio : req.body.bio
     })
+    email = req.body.email;
+    const token = jwt.sign(
+        { user_id: user._id, email },
+        process.env.TOKEN_KEY,
+        {
+          expiresIn: "2h",
+        });
+    user.token = token;
     user.save().then(user => {res.redirect('http://localhost:3000/profile')}).catch(error => { res.json({message: error.message})})
 }
 
