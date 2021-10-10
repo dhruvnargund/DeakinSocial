@@ -2,7 +2,7 @@
 A Deakin university specific social media web app for networking and connecting with other people.
 
 ## Dockerize
-docker build -t username/projectname .
+docker build -t username/projectname .  
 docker run -p 3000:3000 imageid
 
 ## App
