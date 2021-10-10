@@ -15,6 +15,7 @@ const postSignIn = (req, res, next) => {
     .then(user => {
         if(user){
             const email = req.body.email;
+            const name = user.username
             const token = jwt.sign(
                 { user_id: user.username, email },
                 process.env.TOKEN_KEY,
@@ -23,7 +24,7 @@ const postSignIn = (req, res, next) => {
                 }
               );
             user.token = token;
-            res.redirect('http://localhost:3000/profile');
+            res.redirect('http://localhost:3000/profile'+name);
             /* bcrypt.compare(pass, user.password, function(err,result) {
                 if(err) {
                     res.json({

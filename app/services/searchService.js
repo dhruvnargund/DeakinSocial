@@ -3,7 +3,7 @@ const User = require('../models/user');
 
 const getSearch = (req,res) => {
     console.log('Hit the Search Service');
-    res.sendFile(path.join(__dirname, '../public', 'signIn.html'));
+    res.sendFile(path.join(__dirname, '../public', 'search.html'));
 }
 
 const postSearch = (req,res) => {
@@ -12,7 +12,7 @@ const postSearch = (req,res) => {
     User.findOne({$or: [{email: userid}, {username: userid}]})
     .then(user => {
         if(user){
-            res.redirect('http://localhost:3000/profile');
+            res.redirect('http://localhost:3000/profile/'+userid);
         } else {
             res.json({
                 message: 'User not found!'

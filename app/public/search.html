@@ -82,7 +82,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Forgot DeakinSocial password</title>
+        <title>Search User</title>
         <!-- tab icon -->
         <!-- We can change it later to have DeakinSocial's icon -->
         <link rel="icon" href="images/forgotPasswordIcon.png">
@@ -114,11 +114,11 @@
                     <!-- display-4 is used to control font size of the heading and mb is margin bottom -->
                     <h1 class="signupHeading display-4">Search User</h1>
                     <!-- Guys set the submit link here!! -->
-                    <form action="#">
+                    <form action="/search" method="post">
                         <!-- text-start is another bootstarp class that aligns the text to the start of the container -->
                         <div class="text-start mt-1">
                             <label for="username" class="form-label ms-3" aria-label="username search"></label>
-                            <input type="text" placeholder="Enter username here" name="username" id="username"
+                            <input type="text" placeholder="Enter username/email here" name="username" id="username"
                                 class="form-control">
                         </div>
 
@@ -127,7 +127,7 @@
                     </form>
                     <div class="container shadow-sm usersResult">
                         <!-- keep it blank till you dind one -->
-                        <a id="userProfileLink" class="text-decoration-none text-danger" href="#">Username Here</a><br>
+                        <a id="userProfileLink" class="text-decoration-none text-danger" href="#"></a><br>
                     </div>
                 </div>
             </div>
