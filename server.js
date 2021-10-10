@@ -12,6 +12,18 @@ app.use(express.json());
 /* Deliver static public facing */
 app.use(express.static(path.join(__dirname, './public')));
 
+/* testing */
+
+app.get('/addTwoNumbers/:firstNumber/:secondNumber', function(req,res,next){
+    var firstNumber = parseInt(req.params.firstNumber)
+    var secondNumber = parseInt(req.params.secondNumber)
+    var result = firstNumber + secondNumber || null
+    if(result == null) {
+        res.json({result: result, statuscode: 400}).status(400)
+    }
+    else { res.json({result: result, statuscode: 200}).status(200)}
+})
+
 /* Route Handling */
 const users = require('./routes/users');
 const timeline = require('./routes/timeline');

@@ -4,7 +4,8 @@
   "description": "A Deakin university specific social media web app for networking and connecting with other people.",
   "main": "server.js",
   "scripts": {
-    "devStart": "nodemon server.js"
+    "devStart": "nodemon server.js",
+    "test": "mocha --reporter spec"
   },
   "repository": {
     "type": "git",
@@ -24,8 +25,12 @@
   "homepage": "https://github.com/dhruvnargund/DeakinSocial#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "chai": "^4.3.4",
     "express": "^4.17.1",
-    "mongodb": "^4.1.2"
+    "mocha": "^9.1.2",
+    "mongodb": "^4.1.2",
+    "request": "^2.88.2",
+    "request-progress": "^3.0.0"
   },
   "devDependencies": {
     "dotenv": "^10.0.0",
