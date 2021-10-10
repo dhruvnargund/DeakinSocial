@@ -1,15 +1,6 @@
 const User = require('../models/user');
 const Post = require('../models/post');
 
-const postComment = (req, res) => {
-    let post = new Post({
-        username: req.body.username,
-        content: req.body.comment
-    });
-    post.save();
-}
-
-
 const getAllProfiles = (req, res) => {
     console.log('Hit the Profile Service');
     // Insert db request here.
@@ -26,4 +17,4 @@ const getProfile = (req, res) => {
     User.findOne({ username: req.params.id }).then((result) => res.send(result)).catch((err) => console.log("Error:", err));
 }
 
-module.exports = { getAllProfiles, getProfile, postComment };
+module.exports = { getAllProfiles, getProfile };

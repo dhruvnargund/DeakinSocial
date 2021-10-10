@@ -2,7 +2,6 @@ const User = require('../models/user');
 const Post = require('../models/post');
 
 const getTimeline = (req, res) => {
-    console.log('Hit the Profile Service');
     // Insert db request here.
     Post.find().then((result) => res.render('timeline', {
         // pass request results to pug page
