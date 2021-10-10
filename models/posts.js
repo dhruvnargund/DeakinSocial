@@ -14,11 +14,20 @@ const PostSchema = new Schema({
         type: String,
         required: true
     },
-    time: { 
-        type : Date, 
+    time: {
+        type: Date,
         default: Date.now
-    }
-}, {timeStamps: true});
+    },
+    comments: [{
+        comment: String,
+        username: String,
+        time: {
+            type: Date,
+            default: Date.now
+        }
+    }]
+
+}, { timeStamps: true });
 
 PostSchema.plugin(uniqueValidator);
 
