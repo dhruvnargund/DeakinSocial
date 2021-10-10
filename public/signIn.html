@@ -36,15 +36,15 @@
                 <!-- display-4 is used to control font size of the heading and mb is margin bottom -->
                 <h1 class="signupHeading display-4">Sign In to DeakinSocial</h1>
                 <!-- Guys set the submit link here!! -->
-                <form action="#">
+                <form action="/signIn" method="post">
                     <!-- text-start is another bootstarp class that aligns the text to the start of the container -->
                     <div class="text-start mt-5">
-                        <label for="userEmail" class="form-label ms-3" aria-label="email input">Email</label>
-                        <input type="email" name="userEmail" id="userEmail" class="form-control">
+                        <label for="userEmail" class="form-label ms-3" aria-label="email input">Email/Username</label>
+                        <input type="text" name="username" id="userEmail" class="form-control">
 
                         <label for="userPassword" class="form-label ms-3 mt-4"
                             aria-label="password input">Password</label>
-                        <input type="password" name="userPassword" id="userPassword" class="form-control mb-4">
+                        <input type="password" name="password" id="userPassword" class="form-control mb-4">
                     </div>
 
                     <!-- btn is bootstrap class that makes the button shape better and py is padding on top and bottom -->

@@ -13,6 +13,7 @@ const postSignIn = (req, res, next) => {
     User.findOne({$and: [{email: userid}, {password: pass}]})
     .then(user => {
         if(user){
+            res.redirect('http://localhost:3000/profile');
             /* bcrypt.compare(pass, user.password, function(err,result) {
                 if(err) {
                     res.json({
@@ -31,12 +32,12 @@ const postSignIn = (req, res, next) => {
                     })
                 }
             }) */
-            res.json({
+            /* res.json({
                 message:'Login successful'
-            })
+            }) */
         } else {
             res.json({
-                message: 'Invalid credentials!'
+                message: 'User not found!'
             })
         }
     })

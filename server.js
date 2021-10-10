@@ -73,6 +73,7 @@ app.use(express.json());
 
 /* Deliver static public facing */
 app.use(express.static(path.join(__dirname, './public')));
+app.use(express.urlencoded({extended: true}));
 
 /* Add pug functionality */
 app.set('views', path.join(__dirname, './views'));

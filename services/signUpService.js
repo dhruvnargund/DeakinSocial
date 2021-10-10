@@ -15,7 +15,7 @@ const postSignUp = (req,res) => {
         campus : req.body.campus,
         bio : req.body.bio
     })
-    user.save().then(user => {res.json({message: 'New User added.'})}).catch(error => { res.json({message: error.message})})
+    user.save().then(user => {res.redirect('http://localhost:3000/profile')}).catch(error => { res.json({message: error.message})})
 }
 
 module.exports = {

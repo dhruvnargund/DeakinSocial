@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 var Controllers = require("../controllers");
 
-router.get('/', (res) => {
+router.get('/', (req, res) => {
     Controllers.signUpController.getSignUp(res);
 });
 
