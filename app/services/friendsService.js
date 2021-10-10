@@ -1,44 +1,13 @@
 const User = require('../models/user');
 
 const getFriends = (req, res) => {
-    console.log('Hit the friends service: get friends');
+    console.log('Hit the Get Friends Service');
+    var username = 'dnargund';
     // Insert db request here.
-    // res.render('profile', {
-    //     // pass request results to pug page
-    //     owner: req.params.id
-    // });
+    User.findOne({username: username}).then((result) => res.render('friends', {
+        owner: username,
+        result
+    })).catch((err) => console.log("Error:", err));
 }
 
-const addFriend = (req, res) => {
-    console.log('Hit the friends service: add friend');
-    var friend = {friendsUsername: 'bathomas'};
-    User.findOneAndUpdate(
-        { username: 'dnargund' }, 
-        { $push: { friends: friend  } },
-       function (error, success) {
-             if (error) {
-                 console.log(error);
-             } else {
-                 console.log(success);
-             }
-         });
-         res.send('Done');
-}
-
-const removeFriend = (req, res) => {
-    console.log('Hit the friends service: remove friend');
-    var friend = {friendsUsername: 'bathomas'};
-    User.findOneAndUpdate(
-        { username: 'dnargund' }, 
-        { $pull: { friends: friend  } },
-       function (error, success) {
-             if (error) {
-                 console.log(error);
-             } else {
-                 console.log(success);
-             }
-         });
-         res.send('Done');
-}
-
-module.exports = { getFriends, addFriend, removeFriend }
+module.exports = { getFriends }
