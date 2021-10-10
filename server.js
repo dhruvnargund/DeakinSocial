@@ -87,6 +87,7 @@ const signIn = require('./routes/signIn');
 const signUp = require('./routes/signUp');
 const forgotPass = require('./routes/forgotPass');
 const resetPass = require('./routes/resetPass');
+const search = require('./routes/search');
 
 app.use('/', users);
 app.use('/timeline', timeline);
@@ -96,6 +97,7 @@ app.use('/signIn', signIn);
 app.use('/signUp', signUp);
 app.use('/forgotPass', forgotPass);
 app.use('/resetPass', resetPass);
+app.use('/search', search);
 
 app.listen(port, () => {
     console.log("Server is listening on port", port);

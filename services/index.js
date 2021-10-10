@@ -4,5 +4,6 @@ module.exports = {
     forgotPassService:require('./forgotPassService'),
     resetPassService:require('./resetPassService'),
     TimelineService:require('./timelineService'),
-    ProfileService:require('./profileService')
+    ProfileService:require('./profileService'),
+    searchService:require('./searchService')
 }
