@@ -10,7 +10,4 @@ const getSignUp = (req,res) => {
     Service.signUpService.getSignUp(req,res)
 }
 
-module.exports = {
-    postSignUp,
-    getSignUp
-}
+module.exports = { postSignUp, getSignUp }

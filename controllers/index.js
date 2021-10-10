@@ -1,8 +1,9 @@
 module.exports={
     signInController:require('./signInController'),
     signUpController:require('./signUpController'),
-    forgotPassController:require('./forgotPassController'),
-    resetPassController:require('./resetPassController'),
     searchController:require('./searchController'),
-    friendsController:require('./friendsController')
+    friendsController:require('./friendsController'),
+    profileController:require('./profileController'),
+    timelineController:require('./timelineController'),
+    authController:require('./auth')
 }

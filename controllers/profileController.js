@@ -1,5 +1,6 @@
 const Service = require('../services');
 
+/* REMOVE BEFORE SUBMIT */
 const getAllProfiles = (req, res) => {
     console.log('Hit the Profile Controller');
     Service.ProfileService.getAllProfiles(req, res);
@@ -10,4 +11,9 @@ const getProfile = (req, res) => {
     Service.ProfileService.getProfile(req, res);
 }
 
-module.exports = { getAllProfiles, getProfile }
+const getUsersProfile = (req, res) => {
+    console.log('Hit the Profile Controller');
+    Service.ProfileService.getProfile(req, res, JWTidentity);
+}
+
+module.exports = { getAllProfiles, getProfile, getUsersProfile }

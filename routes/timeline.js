@@ -5,7 +5,9 @@ const TimelineController = require('../controllers/timelineController');
 // const controller = new TimelineController();
 
 router.get('/', (req, res) => {
+    /* If JWT present, send to timeline... */
     TimelineController.getTimeline(req, res);
+    /* If JWT not present, send to login... */
 })
 
 router.get('/:id', (req, res) => {

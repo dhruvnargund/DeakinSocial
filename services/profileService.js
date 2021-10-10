@@ -12,9 +12,12 @@ const getAllProfiles = (req, res) => {
     .catch((err) => console.log("Error:", err));
 }
 
-const getProfile = (req, res) => {
+const getProfile = (req, res, JWT) => {
     console.log('Hit the specific profile service');
-    User.findOne({username: req.params.id}).then((result) => res.send(result)).catch((err) => console.log("Error:", err));
+    User.findOne({username: req.params.id}).then((result) => res.render('profile', {
+        owner: req.params.id,
+        result
+    })).catch((err) => console.log("Error:", err));
 }
 
 module.exports = { getAllProfiles, getProfile }

@@ -30,7 +30,7 @@ mongoose.connection.on('open', function () {
 })
 
 /* Model Handling */
-const User = require('./models/user');
+// const User = require('./models/user');
 
 /* Create some data */
 // const harshaUser = new User({
@@ -122,27 +122,27 @@ app.set('views', path.join(__dirname, './views'));
 app.set('view engine', 'pug');
 
 /* Route Handling */
-const users = require('./routes/users');
 const timeline = require('./routes/timeline');
 const profile = require('./routes/profile');
-const post = require('./routes/post');
 const signIn = require('./routes/signIn');
 const signUp = require('./routes/signUp');
-const forgotPass = require('./routes/forgotPass');
-const resetPass = require('./routes/resetPass');
 const search = require('./routes/search');
 const friends = require('./routes/friends');
 
-app.use('/', users);
-app.use('/timeline', timeline);
+// const post = require('./routes/post');
+// const users = require('./routes/users');
+
 app.use('/profile', profile);
-app.use('/post', post);
 app.use('/signIn', signIn);
 app.use('/signUp', signUp);
-app.use('/forgotPass', forgotPass);
-app.use('/resetPass', resetPass);
 app.use('/search', search);
 app.use('/friends', friends);
+app.use('/', timeline);
+
+// app.use('/resetPass', resetPass);
+// app.use('/forgotPass', forgotPass);
+// app.use('/timeline', timeline);
+// app.use('/post', post);
 
 app.listen(port, () => {
     console.log("Server is listening on port", port);
