@@ -114,20 +114,20 @@ mongoose.connection.on('open', function () {
 app.use(express.json());
 
 /* Deliver static public facing */
-app.use(express.static(path.join(__dirname, './public')));
+app.use(express.static(path.join(__dirname, './app/public')));
 app.use(express.urlencoded({extended: true}));
 
 /* Add pug functionality */
-app.set('views', path.join(__dirname, './views'));
+app.set('views', path.join(__dirname, './app/views'));
 app.set('view engine', 'pug');
 
 /* Route Handling */
-const timeline = require('./routes/timeline');
-const profile = require('./routes/profile');
-const signIn = require('./routes/signIn');
-const signUp = require('./routes/signUp');
-const search = require('./routes/search');
-const friends = require('./routes/friends');
+const timeline = require('./app/routes/timeline');
+const profile = require('./app/routes/profile');
+const signIn = require('./app/routes/signIn');
+const signUp = require('./app/routes/signUp');
+const search = require('./app/routes/search');
+const friends = require('./app/routes/friends');
 
 // const post = require('./routes/post');
 // const users = require('./routes/users');
