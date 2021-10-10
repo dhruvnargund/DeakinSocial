@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb+srv://harsha:reddy@cluster0.22slh.mongodb.net/DeakinSocial", { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log("connection succesfull"))
+mongoose.connect("mongodb+srv://harsha:reddy@cluster0.22slh.mongodb.net/DeakinSocial", {useNewUrlParser: true, useUnifiedTopology: true})
+.then( () => console.log("connection succesfull"))
 
-    .catch((err) => console.log(err));
+.catch( (err) => console.log(err));
 
 // schema
 
@@ -11,7 +11,7 @@ const userSchema = new mongoose.Schema({
 
     fnameInput: {
         type: String,
-        required: true
+        required : true
     },
     lnameInput: String,
     email: String,
@@ -26,13 +26,13 @@ const contentSchema = new mongoose.Schema({
 
     fnameInput: {
         type: String,
-        required: true
+        required : true
     },
     lnameInput: String,
     email: String,
     content: String,
     date: {
-        type: Date,
+        type:Date,
         default: Date.now
     }
 
@@ -52,9 +52,9 @@ const friendrequestSchema = new mongoose.Schema({
 
 // collection creation
 
-const User = new mongoose.model("User", userSchema);
-const Post = new mongoose.model("Post", contentSchema);
-const Request = new mongoose.model("Request", friendrequestSchema);
+const User = new mongoose.model("User",userSchema);
+const Post = new mongoose.model("Post",contentSchema);
+const Request = new mongoose.model("Request",friendrequestSchema);
 
 // create document or insert
 
@@ -81,7 +81,7 @@ const harshPost = new Post({
 harshPost.save();
 
 const createDocument = async () => {
-    try {
+    try{
         const yashRequest = new Request({
 
             name: "Yash",
@@ -111,9 +111,21 @@ const createDocument = async () => {
         const result = await Request.insertMany([dhruvRequest, benRequest, tomRequest]);
         console.log(result);
 
-    } catch (err) {
+    }catch(err){
         console.log(err);
     }
 }
 
-createDocument();
+ createDocument();
+
+
+// to read or quering the documents
+
+//const getDocument = async () =>{
+//  const result = await Request.find({campus: "Burwood"})
+//   .select({name:1})
+//   .limit(1);
+//    console.log(result);
+//}
+
+//getDocument();

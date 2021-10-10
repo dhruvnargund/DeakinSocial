@@ -14,8 +14,7 @@ body{
 
 .signupBox:nth-last-of-type(1){
     background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-	background: linear-gradient(to right, #FF4B2B, #FF416C);    
-    color: white;
+	background: linear-gradient(to right, #FF4B2B, #FF416C);    color: white;
 }
 
 h1{

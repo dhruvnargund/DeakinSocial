@@ -31,7 +31,7 @@ const UserSchema = new Schema({
         type: String,
         lowercase: true,
         required: [true, "can't be blank"],
-        match: [/\S+@\S+\.\S+/, 'is invalid'],
+        match: [/\S+@\S+\.\S+/, 'is invalid'], 
         index: true,
         unique: true
     },
@@ -51,11 +51,11 @@ const UserSchema = new Schema({
             match: [/^[a-zA-Z0-9]+$/, 'is invalid'],
         }
     }]
-}, { timeStamps: true });
+}, {timeStamps: true});
 
 UserSchema.plugin(uniqueValidator);
 
-UserSchema.methods.getUserData = function () {
+UserSchema.methods.getUserData = function(){
     return {
         firstName: this.firstName,
         lastName: this.lastName,

@@ -9,7 +9,7 @@ router.post('/', (req, res) => {
 // Retrieving an account ...
 // Placeholder to see functionality
 router.get('/', (req, res) => {
-    res.send("Server is functioning");
+    res.send("Server is functioning");    
 });
 
 module.exports = router;

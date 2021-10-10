@@ -15,7 +15,7 @@ const removeFriend = (req, res) => {
 }
 
 const createFriendsList = (req, res) => {
-
+    
 }
 
 
