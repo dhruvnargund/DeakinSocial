@@ -66,3 +66,9 @@ font-weight: 700;
 #mainNavbar .nav-link:hover{
     color: #ea1c2c;
 }
+
+.usersResult{
+height: 50px;
+display: flex;
+align-items: center;
+}
