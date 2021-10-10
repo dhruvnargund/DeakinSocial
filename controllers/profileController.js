@@ -10,4 +10,4 @@ const getProfile = (req, res) => {
     Service.ProfileService.getProfile(req, res);
 }
 
-module.exports = { getAllProfiles, getProfile };
+module.exports = { getAllProfiles, getProfile }
