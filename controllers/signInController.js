@@ -1,10 +1,15 @@
 let Service = require("../services");
 
-const signIn = (res) => {
+const getSignIn = (res) => {
     console.log('in signInController')
     Service.signInService.getSignIn(res)
 }
 
+const postSignIn = (req,res) => {
+    console.log('in signInController')
+    Service.signInService.postSignIn(req,res)
+}
+
 module.exports = {
-    signIn
+    getSignIn, postSignIn
 }

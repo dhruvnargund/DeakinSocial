@@ -5,7 +5,7 @@ const postSignUp = (req,res) => {
     Service.signUpService.postSignUp(req,res)
 }
 
-const getSignUp = (req,res) => {
+const getSignUp = (res) => {
     console.log('in signUpController')
     Service.signUpService.getSignUp(req,res)
 }
