@@ -13,7 +13,7 @@ const getProfile = (req, res) => {
 
 const getUsersProfile = (req, res) => {
     console.log('Hit the Profile Controller');
-    Service.ProfileService.getProfile(req, res, JWTidentity);
+    Service.ProfileService.getProfile(req, res);
 }
 
 module.exports = { getAllProfiles, getProfile, getUsersProfile }
