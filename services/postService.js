@@ -1,5 +1,6 @@
 const Post = require('../models/post');
 
+
 const getAllPosts = (req, res) => {
     console.log('Hit the Profile Service');
     // Insert db request here.
@@ -14,5 +15,6 @@ const getPost = (req, res) => {
     console.log('Hit the specific profile service');
     User.findOne({username: req.params.id}).then((result) => res.send(result)).catch((err) => console.log("Error:", err));
 }
+
 
 module.exports = { getAllPosts, getPost }

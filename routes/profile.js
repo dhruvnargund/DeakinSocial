@@ -12,5 +12,4 @@ router.get('/:id', (req, res) => {
     console.log('Hit the Profile Router');
     ProfileController.getProfile(req, res);
 });
-
 module.exports = router;

@@ -15,13 +15,13 @@ mongoose.connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
-.then((res) => console.log('Connection to db established.'))
-.catch((err) => console.log('Error:', err));
+    .then((res) => console.log('Connection to db established.'))
+    .catch((err) => console.log('Error:', err));
 
 /* Get database collection names for confirmation */
-mongoose.connection.on('open', function(){
-    mongoose.connection.db.listCollections().toArray(function(err, names) {
-        if(err) {
+mongoose.connection.on('open', function () {
+    mongoose.connection.db.listCollections().toArray(function (err, names) {
+        if (err) {
             console.log('Error:', err);
         } else {
             names.forEach(e => console.log('-', e.name))
@@ -144,3 +144,35 @@ app.use('/friends', friends);
 app.listen(port, () => {
     console.log("Server is listening on port", port);
 })
+
+
+// const Post = require('./models/posts');
+// const postOne = new Post({
+//     username: "dnargund",
+//     content: "This is some content that is awesome."
+// });
+// const postTwo = new Post({
+//     username: "dnargund",
+//     content: "This is some content that is better than awesome."
+// });
+// const postThree = new Post({
+//     username: "bathomas",
+//     content: "This is real Ben content."
+// });
+// const postFour = new Post({
+//     username: "bathomas",
+//     content: "Amazing Ben Content."
+// });
+// const postFive = new Post({
+//     username: "bathomas",
+//     content: "Amazing Ben Content.",
+//         comments: {
+//             comment: "Yeah, it's amazing!",
+//             username: "dnargund"
+//         }
+// });
+// postOne.save();
+// postTwo.save();
+// postThree.save();
+// postFour.save();
+// postFive.save();

@@ -95,5 +95,46 @@ color: #657786;
 .comments{
 margin-top: 9px;
 padding:0 5px;
+}
 
+.comments-box{
+margin-top: 100px;
+}
+
+
+.comments-box input{
+    width: 70%;
+    height: 50px;
+    padding: 0 20px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #86b0b6;
+}
+
+.comments-box input:focus{
+    border: 1px solid #000;
+    outline: 0;
+}
+
+.comments-box textarea{
+    width: 80%;
+    height: 150px; 
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #86b0b6; 
+    padding: 15px 20px; 
+}
+
+.comments-box textarea:focus{
+    border: 1px solid #000;
+    outline: 0;  
+}
+
+.comments-box button{
+   border: 0;
+   padding: 10px 30px;
+   background: #FF4B2B; 
+   font-size: 18px;
+   border-radius: 5px;
+   color: #e6ecf0;
 }

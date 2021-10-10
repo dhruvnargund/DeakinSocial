@@ -5,7 +5,8 @@ const TimelineController = require('../controllers/timelineController');
 // const controller = new TimelineController();
 
 router.get('/', (req, res) => {
-    res.send('You arrived at the timeline. This is a placeholder');
+    console.log('Hit the Profile Router');
+    ProfileController.getTimeline(req, res);
 })
 
 router.get('/:id', (req, res) => {
