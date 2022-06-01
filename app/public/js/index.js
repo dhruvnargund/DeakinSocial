@@ -93,7 +93,9 @@ function serverMessage(response2) {
 }
 
 function fetchmsg() {
-  var url = "http://localhost:3000/send-msg";
+  //   var url = "http://localhost:3000/send-msg";
+  var host = req.get("host");
+  var url = host + "send-msg";
 
   //   Appending mymsg and loging it
   const data = new URLSearchParams();
