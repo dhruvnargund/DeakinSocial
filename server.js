@@ -86,7 +86,7 @@ app.use(function (req, res, next) {
 });
 
 app.post("/send-msg", (req, res) => {
-  runSample(res.body.MSG).then((data) => {
+  runSample(req.body.MSG).then((data) => {
     res.send({ Reply: data });
   });
 });

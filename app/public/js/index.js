@@ -33,9 +33,7 @@ function listendom(no) {
 $(window).load(function () {
   $messages.mCustomScrollbar();
   setTimeout(function () {
-    serverMessage(
-      "hello i am customer support bot type hi and i will show you quick buttions"
-    );
+    serverMessage("Heyy welcome to DeakinSocial chatbot ...---...");
   }, 100);
 });
 
@@ -55,7 +53,7 @@ function insertMessage() {
   $('<div class="message message-personal">' + msg + "</div>")
     .appendTo($(".mCSB_container"))
     .addClass("new");
-  // fetchmsg()
+  fetchmsg();
 
   $(".message-input").val(null);
   updateScrollbar();
@@ -67,9 +65,9 @@ document.getElementById("mymsg").onsubmit = (e) => {
   //   insert message will display the message on the screen
   insertMessage();
   //   This is then the response message
-  serverMessage("hello");
+  //   serverMessage("hello");
   //   This is tts api we can comment it out if we dont want
-  speechSynthesis.speak(new SpeechSynthesisUtterance("hello"));
+  //   speechSynthesis.speak(new SpeechSynthesisUtterance("hello"));
 };
 
 function serverMessage(response2) {
@@ -112,8 +110,9 @@ function fetchmsg() {
     .then((res) => res.json())
     .then((response) => {
       console.log(response);
-      //  serverMessage(response.Reply);
-      speechSynthesis.speak(new SpeechSynthesisUtterance(response.Reply));
+      //   This will be ther reply from server
+      serverMessage(response.Reply);
+      //   speechSynthesis.speak(new SpeechSynthesisUtterance(response.Reply));
     })
     .catch((error) => console.error("Error h:", error));
 }
