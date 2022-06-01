@@ -5,5 +5,6 @@ module.exports = {
     ProfileService:require('./profileService'),
     searchService:require('./searchService'),
     FriendsService:require('./friendsService'),
-    PostService:require('./postService')
+    PostService:require('./postService'),
+    chatBotService:require('./chatBotService')
 }

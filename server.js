@@ -48,12 +48,14 @@ const signIn = require("./app/routes/signIn");
 const signUp = require("./app/routes/signUp");
 const search = require("./app/routes/search");
 const friends = require("./app/routes/friends");
+const chatBot = require("./app/routes/chatBot");
 
 app.use("/profile", profile);
 app.use("/signIn", signIn);
 app.use("/signUp", signUp);
 app.use("/search", search);
 app.use("/friends", friends);
+app.use("/chatBot", chatBot);
 app.use("/", timeline);
 
 // chatbot
@@ -134,7 +136,7 @@ async function runSample(msg, projectId = "sit737chatbot") {
   return result.fulfillmentText;
 }
 
-// runSample();
+ runSample();
 
 app.listen(port, () => {
   console.log("Server is listening on port", port);

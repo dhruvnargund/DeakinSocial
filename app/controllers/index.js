@@ -5,5 +5,6 @@ module.exports={
     friendsController:require('./friendsController'),
     profileController:require('./profileController'),
     timelineController:require('./timelineController'),
+    chatBotController:require('./chatBotController'),
     authController:require('./auth')
 }
